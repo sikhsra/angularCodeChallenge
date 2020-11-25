@@ -1,0 +1,88 @@
+<h1>Customer Edit</h1>
+<form #starterForm="ngForm" (ngSubmit)="onSubmit()">
+    First Name: <input type="text" class="form-control"
+                       name="firstName" 
+                       #firstName="ngModel"
+                       [(ngModel)]="customer.firstName"
+                       required />
+    
+    <span *ngIf="!firstName.valid">First Name is required!</span>
+    <br /><br />
+    Last Name: <input type="text" class="form-control"
+                       name="lastName" 
+                       #lastName="ngModel"
+                       [(ngModel)]="customer.lastName"
+                       required />
+    
+    <span *ngIf="!lastName.valid">Last Name is required!</span>
+    <br /><br />
+    Address: <input type="text" class="form-control"
+                       name="address" 
+                       #address="ngModel"
+                       [(ngModel)]="customer.address"
+                       required />
+    
+    <span *ngIf="!address.valid">Address is required!</span>
+    <br /><br />
+    City: <input type="text" class="form-control"
+                       name="city" 
+                       #city="ngModel"
+                       [(ngModel)]="customer.city"
+                       required />
+    
+    <span *ngIf="!city.valid">City is required!</span>
+    <br /><br />
+    Province: <input type="text" class="form-control"
+                       name="province" 
+                       #province="ngModel"
+                       [(ngModel)]="customer.province"
+                       required />
+    
+    <span *ngIf="!province.valid">Province is required!</span>
+    <br /><br />
+    Country: <input type="text" class="form-control"
+                       name="country" 
+                       #country="ngModel"
+                       [(ngModel)]="customer.country"
+                       required />
+    
+    <span *ngIf="!country.valid">Country is required!</span>
+    <br /><br />
+    Postal Code: <input type="text" class="form-control"
+                       name="postalCode" 
+                       #postalCode="ngModel"
+                       [(ngModel)]="customer.postalCode"
+                       required />
+    
+    <span *ngIf="!postalCode.valid">Postal Code is required!</span>
+    <br /><br />
+    Phone Number: <input type="text" class="form-control"
+                       name="phoneNumber" 
+                       #phoneNumber="ngModel"
+                       [(ngModel)]="customer.phoneNumber"
+                       required />
+    
+    <span *ngIf="!phoneNumber.valid">Phone Number is required!</span>
+    <br /><br />
+    Email: <input type="text" class="form-control"
+                       name="email" 
+                       #email="ngModel"
+                       [(ngModel)]="customer.email"
+                       required />
+    
+    <span *ngIf="!email.valid">Email is required!</span>
+    <br /><br />
+    <button class="btn btn-default" [disabled]="!starterForm.valid">Submit</button>
+    <br /><br />
+    <div *ngIf="submitted">
+        <b>First Name: </b><span>{{customer.firstName}}</span><br />
+        <b>Last Name: </b><span>{{customer.lastName}}</span><br />
+        <b>Address: </b><span>{{customer.address}}</span><br />
+        <b>City: </b><span>{{customer.city}}</span><br />
+        <b>Province: </b><span>{{customer.province}}</span><br />
+        <b>Country: </b><span>{{customer.country}}</span><br />
+        <b>Postal Code: </b><span>{{customer.postalCode}}</span><br />
+        <b>Phone Number: </b><span>{{customer.phoneNumber}}</span><br />
+        <b>Email: </b><span>{{customer.email}}</span>
+    </div>
+</form>
